@@ -1,2 +1,17 @@
-# compliance-checker-230fz
-AI-powered compliance checker for Russian debt collection communications (230-FZ). RAG + YandexGPT + Colab.
+# 🤖 Compliance Checker для 230-ФЗ
+AI-инструмент для автоматической проверки коммуникаций коллекторов на соответствие ФЗ-230.
+
+## 🏗 Архитектура MVP
+Система построена на принципе **contract-driven prompt engineering**: LLM получает чёткую схему JSON и возвращает строго структурированные данные, готовые для парсинга в CRM.
+
+![Вывод промпта](assets/mvp_prompt_output.png)
+
+## 💼 Business Value (для Product Owner / Architect)
+- **Contract-driven output**: Модель возвращает только валидный JSON с полями `compliant`, `violations`, `severity`. Это исключает "галлюцинации" формата и позволяет сразу интегрировать ответ в enterprise-системы (CRM, BPMN, compliance-дашборды).
+- **Trade-off MVP**: Ручная база правил + промпт вместо RAG. Быстрее итерации, дешевле токены, выше точность на узком домене. Масштабирование до full RAG запланировано на Этап 2.
+- **Регуляторный контекст**: Учёт 230-ФЗ, 152-ФЗ (локализация данных через YandexGPT), требований ЦБ к маркировке и времени взаимодействия.
+
+## 🚀 Как запустить
+1. Откройте `01_mvp_compliance_checker.ipynb` в Google Colab
+2. Вставьте IAM-токен Yandex Cloud при запросе
+3. Запустите ячейки sequentially
