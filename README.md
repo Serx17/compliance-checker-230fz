@@ -1,7 +1,7 @@
 # 🛡️ Compliance Checker для 230-ФЗ
 **AI-powered инструмент для автоматической проверки текстов коллекторов на соответствие российскому законодательству.**
 
-Разработан [Антоненко Сергей] | AI Solutions Architect / Product Owner
+Разработан [ТВОЕ_ИМЯ] | AI Solutions Architect / Product Owner
 
 ---
 
@@ -21,12 +21,12 @@
 
 ```mermaid
 graph LR
-    A[Входящий текст СМС/скрипта] --> B(Embedding Model)
-    B --> C[(ChromaDB Vector Store)]
+    A[Входящий текст] --> B(Embedding Model)
+    B --> C[(ChromaDB)]
     C --> D{Semantic Search}
-    D --> E[Prompt Builder + Context Injection]
-    E --> F[LLM / Rule Engine Fallback]
-    F --> G[JSON Response: Violations + Articles]
+    D --> E[Prompt Builder]
+    E --> F[LLM or Fallback]
+    F --> G[JSON Response]
 ---
 
 🛠 Технологический стек
