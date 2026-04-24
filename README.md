@@ -2,7 +2,7 @@
 
 **AI-инструмент для автоматической проверки текстов коллекторов на соответствие ФЗ-230**
 
-> Разработал: [ТВОЕ_ИМЯ] | AI Solutions Architect / Product Owner
+> Разработал: Антоненко Сергей | AI Solutions Architect / Product Owner
 
 ---
 
