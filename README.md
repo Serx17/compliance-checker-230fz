@@ -19,14 +19,28 @@
 ## 🏗 Архитектура
 Система построена по принципу **RAG (Retrieval-Augmented Generation)** с локальным векторным поиском.
 
-```mermaid
-graph LR
-    A[Входящий текст] --> B(Embedding Model)
-    B --> C[(ChromaDB)]
-    C --> D{Semantic Search}
-    D --> E[Prompt Builder]
-    E --> F[LLM or Fallback]
-    F --> G[JSON Response]
+Входящий текст СМС/скрипта
+│
+▼
+[Embedding Model: paraphrase-multilingual-MiniLM-L12-v2]
+│
+▼
+[ChromaDB Vector Store: локальный поиск по статьям 230-ФЗ]
+│
+▼
+[Semantic Search: поиск 1-2 релевантных норм права]
+│
+▼
+[Prompt Builder: инжект контекста + системный промпт]
+│
+▼
+[LLM Generator или Rule-based Fallback]
+│
+▼
+[Pydantic Validation: строгая JSON-схема]
+│
+▼
+Выход: { "status": "VIOLATION/COMPLIANT", "source": "...", "reason": "...", "advice": "..." }
 ---
 
 🛠 Технологический стек
